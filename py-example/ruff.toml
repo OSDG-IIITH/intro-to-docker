@@ -1,0 +1,8 @@
+line-length = 72
+
+[format]
+quote-style = "double"
+indent-style = "tab"
+line-ending = "lf"
+skip-magic-trailing-comma = false
+docstring-code-format = true

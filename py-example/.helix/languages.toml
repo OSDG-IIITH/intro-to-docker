@@ -1,0 +1,20 @@
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+
+[language-server.pyright.config]
+reportMissingTypeStubs = false
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+autoImportCompletions = true
+
+[[language]]
+name = "python"
+language-servers = ["pyright", "ruff"]
+indent = { tab-width = 2, unit = "\\t" }
+auto-format = true

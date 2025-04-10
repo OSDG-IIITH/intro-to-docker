@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Create a new post</title>
+<style>
+  article {
+    max-width: 500px;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 1rem auto;
+  }
+
+  @media (max-width: 500px) {
+    article {
+      margin: 1rem;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+  <article style="">
+    {% if message %}
+      <aside class="alert">{{ message }}</aside>
+    {% endif %}
+    <form action="/new" method="POST" enctype="multipart/form-data">
+      <h2 style="text-align: center">New Post</h2>
+      <fieldset>
+        <textarea name="text" aria-label="Text" placeholder="Enter post content" rows="5" required></textarea>
+      </fieldset>
+      <fieldset>
+        <label for="image">Upload an image (PNG/JPEG, optional)</label>
+        <input type="file" name="image" id="image" accept="image/png,image/jpeg">
+      </fieldset>
+      <button type="submit" name="action" value="login">Create post</button>
+      <a href="/" style="width: 100%; display: block; text-align: center" role="link" class="link" id="switch">Cancel</a>
+    </form>
+  </article>
+{% endblock %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/pico.min.css">
+  <link rel="stylesheet" href="/static/styles.css">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <main class="container">
+  <nav style="margin-bottom: 2rem">
+    <ul>
+      <li><strong>Instabad</strong></li>
+    </ul>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/profile">Profile</a></li>
+      <li><a href="/logout">Logout</a></li>
+      <li><a href="/new" role="button">Post</a></li>
+    </ul>
+  </nav>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  {% block script %}
+  {% endblock %}
+  <script src="/static/like.js"></script>
+</body>
+</html>
