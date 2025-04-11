@@ -7,8 +7,8 @@ pub fn build(b: *std.Build) void {
         .optimize = b.standardOptimizeOption(.{}),
         .link_libc = true,
     });
-    mod.addIncludePath(b.path("./raylib/include"));
-    mod.addLibraryPath(b.path("./raylib/lib"));
+    mod.addIncludePath(b.path("./raylib/zig-out/include"));
+    mod.addLibraryPath(b.path("./raylib/zig-out/lib"));
     mod.linkSystemLibrary("raylib", .{ .needed = true });
 
     const exe = b.addExecutable(.{ .name = "zigeg", .root_module = mod });

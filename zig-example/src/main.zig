@@ -47,16 +47,16 @@ pub fn main() !void {
                 paused = !paused;
             }
 
-            if ((rl.IsKeyDown(rl.KEY_LEFT) or rl.IsKeyDown(rl.KEY_A)) and rect_pos[0] > 0) {
+            if ((rl.IsKeyDown(rl.KEY_LEFT) or rl.IsKeyDown(rl.KEY_A) or rl.IsKeyDown(rl.KEY_H)) and rect_pos[0] > 0) {
                 rect_pos[0] -= 5;
             }
-            if ((rl.IsKeyDown(rl.KEY_RIGHT) or rl.IsKeyDown(rl.KEY_D)) and rect_pos[0] + RECT_SIZE < WIDTH) {
+            if ((rl.IsKeyDown(rl.KEY_RIGHT) or rl.IsKeyDown(rl.KEY_D) or rl.IsKeyDown(rl.KEY_L)) and rect_pos[0] + RECT_SIZE < WIDTH) {
                 rect_pos[0] += 5;
             }
-            if ((rl.IsKeyDown(rl.KEY_DOWN) or rl.IsKeyDown(rl.KEY_S)) and rect_pos[1] + RECT_SIZE < HEIGHT) {
+            if ((rl.IsKeyDown(rl.KEY_DOWN) or rl.IsKeyDown(rl.KEY_S) or rl.IsKeyDown(rl.KEY_J)) and rect_pos[1] + RECT_SIZE < HEIGHT) {
                 rect_pos[1] += 5;
             }
-            if ((rl.IsKeyDown(rl.KEY_UP) or rl.IsKeyDown(rl.KEY_W)) and rect_pos[1] > 0) {
+            if ((rl.IsKeyDown(rl.KEY_UP) or rl.IsKeyDown(rl.KEY_W) or rl.IsKeyDown(rl.KEY_K)) and rect_pos[1] > 0) {
                 rect_pos[1] -= 5;
             }
 
