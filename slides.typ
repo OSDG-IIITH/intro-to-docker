@@ -497,6 +497,7 @@ The `--rm` flag means "remove this container when it's done executing".
   - `docker compose`
     - Make containers talk to each other!
     - Create container replicas
+  #pause
   - Fun things:
     - Running GUI apps in docker
     - A little bit of Kubernetes
