@@ -30,6 +30,10 @@ app.get("/", (_, res) => {
   res.send(`<h1>Hello, world!</h1><p>You're the ${ord(count)} view.`);
 })
 
+process.addListener("SIGINT", () => {
+  process.exit(0);
+})
+
 const PORT = Number(process.env.PORT || "5000")
 console.log(`Starting server at http://localhost:${PORT}`)
 app.listen(PORT)
