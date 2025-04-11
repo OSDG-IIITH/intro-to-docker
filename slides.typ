@@ -11,7 +11,7 @@
   footer-right: text(
     fill: gray,
     size: 16pt,
-  )[#link("https://github.com/arnu515")[Aarnav Pai], #link("https://github.com/gamemaker1")[Vedant Kulkarni]],
+  )[#link("https://github.com/arnu515")[Aarnav Pai]],
 )
 
 = An Introduction to Docker
@@ -36,7 +36,7 @@
     text(
       fill: gray,
       size: 16pt,
-    )[#link("https://github.com/arnu515")[Aarnav Pai], #link("https://github.com/gamemaker1")[Vedant Kulkarni]],
+    )[#link("https://github.com/arnu515")[Aarnav Pai]],
   )
 ]
 
@@ -561,7 +561,6 @@ The `--rm` flag means "remove this container when it's done executing".
 
 #text(size: 16pt, fill: gray)[
   #link("mailto:aarnav.pai@research.iiit.ac.in")[Aarnav Pai]: https://github.com/arnu515 \
-  #link("mailto:vedant.kulkarni@students.iiit.ac.in")[Vedant Kulkarni]: https://github.com/gamemaker1
 ]
 
 #place(
