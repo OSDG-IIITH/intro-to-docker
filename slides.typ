@@ -481,7 +481,7 @@ The `--rm` flag means "remove this container when it's done executing".
 == Today's Agenda
 
 #[
-  #set text(size: 20pt)
+  #set text(size: 17pt)
   #show sym.checkmark: it => text(fill: green, it)
   - #strike[Why Docker] #sym.checkmark
   #pause
@@ -497,13 +497,16 @@ The `--rm` flag means "remove this container when it's done executing".
   - `docker compose`
     - Make containers talk to each other!
     - Create container replicas
-
-  #meanwhile
-  #place(
-    center + bottom,
-    text(fill: gray, size: 12pt, [`docker`? I hardly even know her.]),
-  )
+  - Fun things:
+    - Running GUI apps in docker
+    - A little bit of Kubernetes
 ]
+
+#meanwhile
+#place(
+  center + bottom,
+  text(fill: gray, size: 12pt, [`docker`? I hardly even know her.]),
+)
 
 
 // TODO:
@@ -511,18 +514,17 @@ The `--rm` flag means "remove this container when it's done executing".
 // - docker compose
 // - the OCI standard
 
-= Awesome Resources
-
-#pagebreak()
-
 #[
   #show link: it => text(fill: blue, it)
   #set text(size: 20pt)
 
+  == Awesome Resources
+
   - This 1-hour introduction video by Travis Media \
     https://youtu.be/i7ABlHngi1Q \
 
-  #pause
+  - The (unofficial) Docker handbook \
+    https://docker-handbook.farhan.dev/
 
   - The Docker documentation \
     Their tutorial: https://docs.docker.com/get-started/ \
@@ -530,11 +532,25 @@ The `--rm` flag means "remove this container when it's done executing".
     `Dockerfile` reference: https://docs.docker.com/reference/dockerfile/ \
     `docker-compose` reference: https://docs.docker.com/reference/compose-file/
 
-  #pause
+  - Other awesome resources: https://github.com/veggiemonk/awesome-docker
+
+  == Fun Stuff
+
+  - Awesome Stacks: `docker compose` config for several popular tools \
+    (start your self-hosting journey today!) \
+    https://github.com/ethibox/awesome-stacks
 
   - Kubernetes: (a basic intro by Travis Media: https://youtu.be/r2zuL9MW6wc) \
     Nigel Poulton's _The Kubernetes Book_ (available in the Library!) \
     Jeff Geerling's Kubernetes 101: https://www.youtube.com/playlist?list=PL2_OBreMn7FoYmfx27iSwocotjiikS5BD
+
+  - `distrobox`: Distros in a box (container) https://distrobox.it
+
+  - `dokku`: Docker-powered self-hosted Heroku https://github.com/dokku/dokku
+
+  - #link("https://containers.dev")[`containers.dev`]: Docker-powered development environments
+
+  - `lazydocker`: Docker TUI https://github.com/jesseduffield/lazydocker
 ]
 
 = Thank you!
