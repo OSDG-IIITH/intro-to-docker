@@ -481,11 +481,11 @@ The `--rm` flag means "remove this container when it's done executing".
 == Today's Agenda
 
 #[
-  #set text(size: 17pt)
+  #set text(size: 16pt)
   #show sym.checkmark: it => text(fill: green, it)
   - #strike[Why Docker] #sym.checkmark
   #pause
-  - What is Docker
+  - #strike[What is Docker] #sym.checkmark
     - #strike[What's a container] #sym.checkmark
     - #strike[The difference between a container and a virtual machine] #sym.checkmark
   #pause
@@ -509,11 +509,98 @@ The `--rm` flag means "remove this container when it's done executing".
   text(fill: gray, size: 12pt, [`docker`? I hardly even know her.]),
 )
 
+== Images
 
-// TODO:
-// - docker
-// - docker compose
-// - the OCI standard
+Images are _blueprints_ for building containers. They contain everything required to create containers,
+its files, configuration, and dependencies.
+
+#pause
+
+Images can be _pushed_ to remote repositories, and _pulled_ from them as well. This makes it very easy
+to deploy containers.
+
+#pause
+
+Images can be _tagged_, as in given a name and version.
+
+#pause
+
+You can build images on top of other images.
+
+For example, the #link("https://hub.docker.com/_/postgres")[`postgres`] image is built on
+top of the `debian` or `alpine` image, depending on the tag you download.
+
+#pagebreak()
+
+#text(size: 20pt)[
+  Let's download the `postgres` image:
+
+  #pause
+
+  ```bash
+  $ docker pull postgres:alpine
+  ```
+
+  Here, `postgres` is the name of the image, and `alpine` is its tag, which can be seen as a version.
+
+  #pause
+
+  There are other tags too,
+
+  - `17`
+  - `17:alpine`
+  - `16`, etc (https://hub.docker.com/_/postgres/tags)
+
+  The default tag (if not specified), is `latest`.
+]
+
+== Repositories
+
+The default repository that Docker uses is called Docker Hub (https://hub.docker.com). It contains
+images for many popular tools (`python`, `nodejs`, `rust`, `postgres`, `mariadb`, `redis`, etc.).
+
+There are other repositories available from popular cloud providers like GitHub, Google, AWS, etc.
+
+You can even create your own repository, it's an open standard anyway!
+
+We'll learn how to push images a little later!
+
+== Your second container!
+
+Interacting with the system:
+
+- Environment Variables
+- Network Ports
+- Bind Mounts
+- Volumes
+
+== Alpine Linux
+
+A security-oriented, _lightweight_ Linux distribution based on _musl libc_ and _busybox_.
+
+#place(
+  right,
+  text(
+    size: 13pt,
+  )[-- #link("https://alpinelinux.org")[alpinelinux.org]],
+)
+
+== Let's create an Image
+
+_Dockerize_ a simple NodeJS application
+
+- Layer caching
+- Multi-stage builds
+
+== Show it to the World!
+
+Let's push the image on Docker Hub!
+
+== Let's do the same for Python
+
+Let's Dockerize #text(fill: gradient.conic(angle: 180deg, ..color.map.rainbow))[Instabad]!
+
+== Docker Compose
 
 #[
   #show link: it => text(fill: blue, it)
