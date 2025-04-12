@@ -16,7 +16,6 @@
 
 = An Introduction to Docker
 
-// TODO: put this mf on top
 #align(
   top + center,
   text(
@@ -589,7 +588,15 @@ A security-oriented, _lightweight_ Linux distribution based on _musl libc_ and _
 
 _Dockerize_ a simple NodeJS application
 
+- Dockerfile
 - Layer caching
+
+#pause
+
+Reducing the size of an image:
+
+- `.dockerignore`
+- Alpine Linux
 - Multi-stage builds
 
 == Show it to the World!
