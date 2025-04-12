@@ -1,0 +1,56 @@
+# $schema: "https://raw.githubusercontent.com/compose-spec/compose-spec/refs/heads/main/schema/compose-spec.json"
+
+name: instabad
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    environment:
+      RELOAD: "0"
+      DATABASE_URL: "postgres://postgres:postgres@db:5432/postgres"
+      REDIS_URL: "redis://redis:6379/0"
+    restart: unless-stopped
+    volumes:
+      - type: volume
+        source: app-data
+        target: /app/post_images
+    depends_on:
+      - db
+      - redis
+    networks:
+      - instabad
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        read_only: true
+        source: ./docker-db-init.sh
+        target: /docker-entrypoint-initdb.d/init.sh
+      - type: bind
+        read_only: true
+        source: ./schema.sql
+        target: /schema.sql
+      - type: volume
+        source: db-data
+        target: /var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    networks:
+      - instabad
+  redis:
+    image: valkey/valkey:8-alpine
+    restart: unless-stopped
+    networks:
+      - instabad
+
+networks:
+  instabad: {}
+
+volumes:
+  app-data:
+  db-data:
